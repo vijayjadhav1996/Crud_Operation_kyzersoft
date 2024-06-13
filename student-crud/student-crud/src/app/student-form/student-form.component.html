@@ -1,0 +1,19 @@
+<h2>{{isEditMode ? 'Edit' : 'Add'}} Student</h2>
+<form (ngSubmit)="saveStudent()" class="student-form">
+  <label class="form-label">
+    Name:
+    <input [(ngModel)]="student.name" name="name" class="form-input">
+  </label>
+  <label class="form-label">
+    Age:
+    <input [(ngModel)]="student.age" name="age" type="number" class="form-input">
+  </label>
+  <label class="form-label">
+    Course:
+    <input [(ngModel)]="student.course" name="course" class="form-input">
+  </label>
+  <div class="form-buttons">
+    <button type="submit" class="btn">{{isEditMode ? 'Update' : 'Save'}}</button>
+    <a routerLink="/students" class="btn btn-secondary">Cancel</a>
+  </div>
+</form>

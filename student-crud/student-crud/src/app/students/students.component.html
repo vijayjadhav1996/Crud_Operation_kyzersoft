@@ -1,0 +1,11 @@
+<h2>Student List</h2>
+<a routerLink="/student-form" class="btn">Add Student</a>
+<ul class="student-list">
+  <li *ngFor="let student of students" class="student-item">
+    <span>{{student.name}} - {{student.age}} - {{student.course}}</span>
+    <div class="student-actions">
+      <a [routerLink]="['/student-form', student.id]" class="btn">Edit</a>
+      <button (click)="deleteStudent(student.id)" class="btn btn-danger">Delete</button>
+    </div>
+  </li>
+</ul>
